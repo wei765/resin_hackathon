@@ -53,4 +53,21 @@ while 1:
     influx_client.write_points(measurements)
     sense.show_message("Hello Wei", text_colour=yellow, back_colour=blue)
     sense.show_message("Temperatue: {}".format(int(sense.temperature)))
+
+    red = (255, 0, 0)
+
+    while True:
+        acceleration = sense.get_accelerometer_raw()
+        x = acceleration['x']
+        y = acceleration['y']
+        z = acceleration['z']
+
+        x = abs(x)
+        y = abs(y)
+        z = abs(z)
+        sense.show_message("Tu velcidad: x={x}, y={y}, z={z}".format(x=x,y=y,z=z) )
+        if x > 1 or y > 1 or z > 1:
+            sense.show_letter("!", red)
+        else:
+            sense.clear()
     time.sleep(5)
