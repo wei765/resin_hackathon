@@ -2,7 +2,6 @@ import os
 import time
 from sense_hat import SenseHat
 from influxdb import InfluxDBClient
-import pandas as pd
 
 influx_client = InfluxDBClient('influxdb', 8086, database='balena-sense')
 influx_client.create_database('balena-sense')
