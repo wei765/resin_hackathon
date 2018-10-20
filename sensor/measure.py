@@ -1,3 +1,6 @@
+#!/usr/bin/python 
+# -*- coding: utf-8 -*-
+
 import os
 import time
 from sense_hat import SenseHat
@@ -48,7 +51,7 @@ while 1:
         count = 0
     sense.set_pixel(0, count, 0, 0, 0)
     influx_client.write_points(measurements)
-    sense.show_message("Hello Wei♥", text_colour=yellow, back_colour=blue)
+    sense.show_message("Hello❤ Wei\u2764", text_colour=yellow, back_colour=blue)
     sense.show_message("Temperatue: {}".format(int(sense.temperature)))
 
     red = (255, 0, 0)
