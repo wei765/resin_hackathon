@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -yq \
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-
+COPY ./requirements.txt /requirements.txt
 RUN pip3 install -r /requirements.txt
 
 # Finally, start our app
