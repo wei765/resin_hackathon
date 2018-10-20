@@ -18,6 +18,7 @@ count = 0
 sense.clear()
 sense.show_message("Hi Wei!", text_colour=yellow, back_colour=blue)
 sense.load_image("heart.png")
+time.sleep(2)
 
 while 1:
     sense.show_message("Start:{}".format(time.strftime("%Y-%m-%d %H:%M:%S")))
@@ -55,7 +56,7 @@ while 1:
     sense.set_pixel(0, count, 0, 0, 0)
     influx_client.write_points(measurements)
 
-    time.sleep(2)
+    time.sleep(1)
     sense.show_message("Temperatue: {}".format(int(sense.temperature)))
 
     red = (255, 0, 0)
