@@ -2,6 +2,7 @@ import os
 import time
 from sense_hat import SenseHat
 from influxdb import InfluxDBClient
+import pandas as pd
 
 influx_client = InfluxDBClient('influxdb', 8086, database='balena-sense')
 influx_client.create_database('balena-sense')
@@ -64,7 +65,7 @@ while 1:
     x = round(x,2)
     y = round(y,2)
     z = round(z,2)
-    sense.show_message("Tu velcidad: x={x}, y={y}, z={z}".format(x=x,y=y,z=z) )
+    sense.show_message("Tu velcidad: x={x}/n, y={y}/n, z={z}/n".format(x=x,y=y,z=z) )
     if x > 0.01 or y > 0.01 or z > 0.01:
         sense.show_letter("!", red,scroll_speed=1)
     else:
