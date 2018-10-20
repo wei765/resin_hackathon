@@ -13,6 +13,8 @@ sense.load_image("balena.png")
 time.sleep(2)
 sense.show_message("balena")
 
+blue = (0, 0, 255)
+yellow = (255, 255, 0)
 count = 0
 
 while 1:
