@@ -62,11 +62,11 @@ while 1:
         y = acceleration['y']
         z = acceleration['z']
 
-        x = abs(x)
-        y = abs(y)
-        z = abs(z)
+        x = int(x)
+        y = int(y)
+        z = int(z)
         sense.show_message("Tu velcidad: x={x}, y={y}, z={z}".format(x=x,y=y,z=z) )
-        if x > 1 or y > 1 or z > 1:
+        if x > 0.01 or y > 0.01 or z > 0.01:
             sense.show_letter("!", red)
         else:
             sense.clear()
