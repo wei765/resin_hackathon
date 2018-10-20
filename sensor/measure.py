@@ -49,4 +49,5 @@ while 1:
         count = 0
     sense.set_pixel(0, count, 0, 0, 0)
     influx_client.write_points(measurements)
+    sense.show_message("balena")
     time.sleep(10)
