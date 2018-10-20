@@ -57,8 +57,6 @@ while 1:
     sense.show_message("Temperatue: {}".format(int(sense.temperature)))
 
     red = (255, 0, 0)
-
-
     acceleration = sense.get_accelerometer_raw()
     x = acceleration['x']
     y = acceleration['y']
@@ -70,8 +68,9 @@ while 1:
     sense.show_message("Vel: x={x}, y={y}, z={z}".format(x=x,y=y,z=z))
     sense.show_message("End", text_colour=yellow)
     if abs(x) > 0.01 or abs(y) > 0.01 or abs(z) > 0.01:
-        sense.show_letter("!", red,scroll_speed=3)
+        sense.show_letter("!", red)
     else:
+        sense.show_message("No supera", text_colour=yellow)
         sense.clear()
     time.sleep(5)
 
