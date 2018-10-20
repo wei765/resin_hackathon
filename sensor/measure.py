@@ -50,5 +50,5 @@ while 1:
     sense.set_pixel(0, count, 0, 0, 0)
     influx_client.write_points(measurements)
     sense.show_message("Hello Wei")
-    sense.show_message("Temperatue: {}".format(sense.temperature))
+    sense.show_message("Temperatue: {}".format(int(sense.temperature)))
     time.sleep(5)
