@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -yq \
   python3-sense-hat \
   python3-influxdb \
   python3-pip \
+  python3-setuptools\
   vim \
   wget && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
