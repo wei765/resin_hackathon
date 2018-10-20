@@ -9,11 +9,15 @@ influx_client.create_database('balena-sense')
 
 sense = SenseHat()
 
-sense.clear()
 
 blue = (0, 0, 255)
 yellow = (255, 255, 0)
 count = 0
+
+sense.clear()
+sense.show_message("Hi Wei!", text_colour=yellow, back_colour=blue)
+sense.load_image("heart.png")
+
 while 1:
     measurements = [
         {
@@ -48,8 +52,7 @@ while 1:
         count = 0
     sense.set_pixel(0, count, 0, 0, 0)
     influx_client.write_points(measurements)
-    sense.show_message("Hi Wei!", text_colour=yellow, back_colour=blue)
-    sense.load_image("heart.png")
+
     time.sleep(2)
     sense.show_message("Temperatue: {}".format(int(sense.temperature)))
 
@@ -64,12 +67,12 @@ while 1:
     x = round(x,2)
     y = round(y,2)
     z = round(z,2)
-    sense.show_message("Vel: x={x}, y={y}, z={z}".format(x=x,y=y,z=z) )
-    if x > 0.01 or y > 0.01 or z > 0.01:
-        sense.show_letter("!", red,scroll_speed=1)
+    sense.show_message("Vel: x={x}, y={y}, z={z}".format(x=x,y=y,z=z))
+    sense.show_message("End", text_colour=yellow)
+    if abs(x) > 0.01 or abs(y) > 0.01 or abs(z) > 0.01:
+        sense.show_letter("!", red,scroll_speed=3)
     else:
         sense.clear()
-    sense.show_message("End")
     time.sleep(5)
 
 # e = (0, 0, 0)
