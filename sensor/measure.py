@@ -3,6 +3,7 @@ import os
 import time
 from sense_hat import SenseHat
 from influxdb import InfluxDBClient
+import datetime
 
 influx_client = InfluxDBClient('influxdb', 8086, database='balena-sense')
 influx_client.create_database('balena-sense')
@@ -19,6 +20,7 @@ sense.show_message("Hi Wei!", text_colour=yellow, back_colour=blue)
 sense.load_image("heart.png")
 
 while 1:
+    sense.show_message("Start:{}".format(datetime.datetime.now().isoformat(' ', 'seconds')))
     measurements = [
         {
             'measurement': 'temperature',
