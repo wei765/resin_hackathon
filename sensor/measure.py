@@ -73,6 +73,7 @@ time.sleep(2)
 
 e = (0, 0, 0)
 w = (255, 255, 255)
+sense.clear()
 while 1:
     for event in sense.stick.get_events():
         # Check if the joystick was pressed
