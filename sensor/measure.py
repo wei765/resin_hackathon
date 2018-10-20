@@ -66,12 +66,12 @@ while 1:
     y = round(y,2)
     z = round(z,2)
     sense.show_message("Vel: x={x}, y={y}, z={z}".format(x=x,y=y,z=z))
-    sense.show_message("End", text_colour=yellow)
     if abs(x) > 0.01 or abs(y) > 0.01 or abs(z) > 0.01:
         sense.show_letter("!", red)
+        time.sleep(2)
     else:
-        sense.show_message("No supera", text_colour=yellow)
         sense.clear()
+    sense.show_message("End", text_colour=yellow)
     time.sleep(5)
 
 # e = (0, 0, 0)
