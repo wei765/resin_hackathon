@@ -6,13 +6,14 @@ RUN apt-get update && apt-get install -yq \
   python3 \
   python3-sense-hat \
   python3-influxdb \
-  python3-datetime \
+  python3-pip \
   vim \
   wget && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
+RUN pip3 install -r /requirements.txt
 
 # Finally, start our app
 CMD ["python3", "/usr/src/app/measure.py"]
