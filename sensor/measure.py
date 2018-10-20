@@ -20,7 +20,7 @@ sense.show_message("Hi Wei!", text_colour=yellow, back_colour=blue)
 sense.load_image("heart.png")
 
 while 1:
-    sense.show_message("Start:{}".format(time.strftime("%Y-%m-%d %H:%M:%S"))
+    sense.show_message("Start:{}".format(time.strftime("%Y-%m-%d %H:%M:%S")))
     measurements = [
         {
             'measurement': 'temperature',
