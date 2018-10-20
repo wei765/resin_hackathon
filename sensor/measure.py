@@ -9,9 +9,7 @@ influx_client.create_database('balena-sense')
 sense = SenseHat()
 
 sense.clear()
-sense.load_image("balena.png")
-time.sleep(2)
-sense.show_message("balena")
+sense.load_image("cor.png")
 
 blue = (0, 0, 255)
 yellow = (255, 255, 0)
